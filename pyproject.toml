@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mdfl-yolo"
+version = "0.1.0"
+description = "MDFL-YOLO for cigarette inner-liner defect detection"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+  "torch==2.5.1",
+  "torchvision==0.20.1",
+  "ultralytics==8.3.9",
+  "numpy==1.26.4",
+  "opencv-python==4.10.0.84",
+  "PyYAML>=6.0,<7",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<9"]
+
+[project.scripts]
+mdfl-yolo = "mdfl_yolo.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["mdfl_yolo*"]
+
+[tool.setuptools.package-data]
+mdfl_yolo = ["*.yaml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
