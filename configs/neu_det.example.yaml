@@ -1,0 +1,12 @@
+# Class IDs must match the labels in the locally prepared dataset.
+path: /absolute/path/to/neu_det
+train: splits/train.txt
+val: splits/val.txt
+test: splits/test.txt
+names:
+  0: crazing
+  1: inclusion
+  2: patches
+  3: pitted surface
+  4: rolled-in scale
+  5: scratches

@@ -1,0 +1,11 @@
+# Replace the path and split lists with your own dataset locations.
+# Preserve the fixed split membership when reproducing a study.
+path: /absolute/path/to/inner_liner
+train: splits/train.txt
+val: splits/val.txt
+test: splits/test.txt
+names:
+  0: line
+  1: dark spot
+  2: bright spot
+  3: stain

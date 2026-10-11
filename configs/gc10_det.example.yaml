@@ -1,0 +1,16 @@
+# Class IDs must match the labels in the locally prepared dataset.
+path: /absolute/path/to/gc10_det
+train: splits/train.txt
+val: splits/val.txt
+test: splits/test.txt
+names:
+  0: punching hole
+  1: welding line
+  2: crescent gap
+  3: water spot
+  4: oil spot
+  5: silk spot
+  6: inclusion
+  7: rolled pit
+  8: crease
+  9: waist folding
