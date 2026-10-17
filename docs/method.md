@@ -51,6 +51,6 @@ The normalizer excludes elongation weights. The inherited task-aligned assigner 
 
 ## Training protocol
 
-`trainer.py` contains the 300-epoch training recipe: SGD LR 0.01, momentum 0.937, weight decay 0.0005, final LR factor 0.01, three warmup epochs, nominal batch 64, and the augmentation probabilities described in Section 4.1. The inherited SGD optimizer uses Nesterov. Mosaic closes for the final ten epochs. Early stopping is disabled to retain the scheduled budget.
+`trainer.py` contains the training recipe with a maximum of 300 epochs: SGD LR 0.01, momentum 0.937, weight decay 0.0005, final LR factor 0.01, three warmup epochs, nominal batch 64, and the augmentation probabilities described in Section 4.1. The inherited SGD optimizer uses Nesterov. Mosaic is scheduled to close for the final ten epochs of the 300-epoch budget. Early stopping is enabled with a patience of 100 epochs based on validation fitness, so a run may end before the scheduled Mosaic closure.
 
 Throughput measurement uses FP32. Training AMP is controlled by `--amp` and defaults off. Supply dataset class mappings and the fixed split lists with the data.
