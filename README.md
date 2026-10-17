@@ -56,7 +56,7 @@ mdfl-yolo train \
   --variant mdfl --seed 2025 --device 0
 ```
 
-Repeat with seeds `3407` and `42`. The default recipe uses 640-pixel inputs, batch 16, eight workers, 300 epochs, Nesterov SGD, and validation-based selection. `best.pt` is saved under `runs/train/<variant>-seed<seed>/weights/`. Training uses FP32 by default; `--amp` enables mixed precision explicitly. Use `--from-scratch` in place of `--pretrained` for a run without COCO initialization.
+Repeat with seeds `3407` and `42`. The default recipe uses 640-pixel inputs, batch 16, eight workers, a maximum of 300 epochs, Nesterov SGD, and validation-based selection. Early stopping is enabled with a patience of 100 epochs based on validation fitness. `best.pt` is saved under `runs/train/<variant>-seed<seed>/weights/`. Training uses FP32 by default; `--amp` enables mixed precision explicitly. Use `--from-scratch` in place of `--pretrained` for a run without COCO initialization.
 
 All eight ablation conditions are available through `--variant`:
 
