@@ -16,8 +16,8 @@ PAPER_TRAIN_ARGS = {
     "close_mosaic": 10, "degrees": 0.0, "shear": 0.0, "perspective": 0.0,
     "flipud": 0.0, "mixup": 0.0, "copy_paste": 0.0, "multi_scale": False,
     "rect": False, "seed": 2025, "pretrained": False,
-    # Disable early stopping so every run can reach the 300-epoch budget.
-    "patience": 0,
+    # Stop after 100 epochs without validation-fitness improvement.
+    "patience": 100,
 }
 
 
